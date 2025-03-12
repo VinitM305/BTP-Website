@@ -3,16 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/test.css">
     <title>BTP-Project</title>
 </head>
 <body>
-    <section class="head">
-        <ul class="ul">
-            <li><a href="1stpage.html">1stpage</a></li>
-            <li><a href="2ndpage.html">2ndpage</a></li>
-            <li><a href="3rdpage.html">3rdpage</a></li>
-            <li><a href="4thpage.html">4thpage</a></li>
-        </ul>
+    <section class="page">
+        <div class="background bg1"></div>
+    <div class="background bg2"></div>
+        <div class="wholenavbar">
+            <div class = "navbar" id="navlinks">
+                <i class="fa fa-times fa" onclick="hidemenu()" id="close"></i>
+                <ul class="ul">
+                    <li><a href="1stpage.html" class="nav">About</a></li>
+                    <li><a href="2ndpage.html" class="nav">Organisers</a></li>
+                    <li><a href="3rdpage.html" class="nav">Speakers and Participants</a></li>
+                    <li><a href="4thpage.html" class="nav">Venue</a></li>
+                    <li><a href="4thpage.html" class="nav">Accomodation</a></li>
+                    <li><a href="4thpage.html" class="nav">Schedule</a></li>
+                    <li><a href="4thpage.html" class="nav">Poster</a></li>
+                    <li><a href="4thpage.html" class="nav">Abstracts</a></li>
+                    <li><a href="4thpage.html" class="nav">Gallery</a></li>
+                    <li><a href="4thpage.html" class="nav">Contact</a></li>
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showmenu()" id="bars"></i>
+            <div class="sideimage">
+                <img src="../assests/cdsalogo.png" alt="No image available" class="i1">
+            </div>
+        </div>
+        
+        <div class="content">
+            <h1 class="heading">8th International Conference on Complex Dynamical Systems and Applications</h1>
+            <p class="CDSA">CDSA 2026</p>    
+            <p class="info">CDSA 2026, the 8th International Conference on Complex Dynamical Systems, will be held on Jan 23-26 at Dhirubhai Ambani University, Gandhinagar, bringing together experts to discuss advancements in nonlinear dynamics and complex systems.</p>
+        </div>
     </section>
+    <!-- <div>
+        hello<br>
+        hello<br>
+        hello<br>
+        hello<br>
+        hello<br>
+        hello<br>
+        hello<br>
+        hello<br>
+        hello<br>
+        hello<br>
+        hello<br>
+        hello<br>
+        hello<br>
+        hello<br>
+        hello<br>
+        hello<br>
+        hello<br>
+        hello<br>
+        hello<br>
+    </div> -->
+    <script>
+        var navbar = document.getElementById("navlinks");
+        function hidemenu(){
+            navbar.style.left = "-400px";
+        }
+        function showmenu(){
+            navbar.style.left = "-100px";
+        }
+        
+    </script>
 </body>
 </html>
