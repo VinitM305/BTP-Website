@@ -10,12 +10,12 @@ html, body {
 }
 
 .page{
-    background: linear-gradient(rgba(0, 0, 0, 0.557),rgba(0, 0, 0, 0.7) ),url('../assests/banner.png') ;
+    background: linear-gradient(rgba(0, 0, 0, 0.557),rgba(0, 0, 0, 0.7) ),url('../assests/front.jpg') ;
     background-size: cover;
     background-position: center 77px;
     background-repeat: no-repeat;
     position: relative;
-    height: 111vh;
+    height: 110vh;
     width: 100%;
 }
 .navbar ul{
@@ -329,23 +329,23 @@ div.item {
 
 div.item:nth-of-type(1) {
     --offset: 1;
-    background-image: url('../assests/banner.png');
+    background-image: url('../assests/DSC_1522.jpg');
 }
 div.item:nth-of-type(2) {
     --offset: 2;
-    background-image: url('../assests/banner1.png');
+    background-image: url('../assests/DSC_1555.jpg');
 }
 div.item:nth-of-type(3) {
     --offset: 3;
-    background-image: url('../assests/ct1.png');
+    background-image: url('../assests/DSC_1642.jpg');
 }
 div.item:nth-of-type(4) {
     --offset: 4;
-    background-image: url('../assests/lab4_8_1.png');
+    background-image: url('../assests/DSC_1444.jpg');
 }
 div.item:nth-of-type(5) {
     --offset: 5;
-    background-image: url('../assests/lab4_8_2.png');
+    background-image: url('../assests/DSC_1437.jpg');
 }
 
 input:nth-of-type(1) {
