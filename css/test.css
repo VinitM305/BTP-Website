@@ -15,7 +15,7 @@ html, body {
     background-position: center 77px;
     background-repeat: no-repeat;
     position: relative;
-    height: 110vh;
+    height: 100vh;
     width: 100%;
 }
 .navbar ul{
@@ -23,7 +23,8 @@ html, body {
     flex-wrap: wrap;
     /* width: 75vw; */
     font-size: 13px;
-    font-weight: 550;
+    font-weight:550;
+    padding: 0;
 }
 .navbar li{
     color: white;
@@ -34,6 +35,9 @@ html, body {
 }
 .navbar{
     display: inline-block;
+    /* display: flex;
+    justify-content: flex-end;
+    align-items: center; */
     
     /* width: 450px; */
     /* border: 2px solid red; */
@@ -103,20 +107,28 @@ html, body {
 }
 
 .i1{
-    width: 50px;
+    width: 52px;
     margin: auto;
     border-radius: 50%;
-    margin-top: 13px;
+    margin-top: 10px;
 }
+
+
 .sideimage{
     float:right;
     overflow: auto;
-    padding-right: 30px;
     font-family: 'Bree Serif', serif;
     font-size: 17px;
     margin: auto;
     margin-top: 0px;
     padding-top: 0px;
+}
+
+.daulogo{
+    margin-top: 5px;
+}
+.i2{
+    width: 80px;
 }
 #bars{
     display: none;
@@ -139,7 +151,11 @@ html, body {
     left: 50%;
     transform: translateX(-50%);
     z-index: 1000;
+    display: flex; /* Flex for horizontal layout */
+    align-items: center; /* Vertically center items */
+    
 }
+
 
 @media(max-width:1500px)
 {
@@ -149,19 +165,31 @@ html, body {
     .page{
         background-position: center 130px;
     }
+    .daulogo{
+        margin-top: 25px;
+    }
+    .cdsalogo{
+        margin-top: 20px;
+    }
 }
 
 @media(max-width:1160px)
 {
+    .daulogo{
+        margin-top: 5px;
+    }
+    .cdsalogo{
+        margin-top: 2px;
+    }
     .page{
         background-position: center 75px;
     }
     .navbar ul{
         margin-top: 40px;
         display: flex;
-        flex-direction: column;  /* Force vertical stacking */
+        flex-direction: column;  
         align-items: center;
-        width: 260px;
+        width: 400px;
     }
     .navbar ul li{
         display: inline-block;
@@ -170,7 +198,7 @@ html, body {
     }
     .navbar{
         position: fixed;
-        background: white;
+        background: rgb(216, 211, 211);
         height: 75vh;
         width: 330px;
         top: 0;
@@ -194,7 +222,7 @@ html, body {
         display: inline-block;
         color: white;
         margin-left: 20px;
-        margin-top: 25px;
+        margin-top: 5px;
     }
     #close{
         margin-top: 10px;
