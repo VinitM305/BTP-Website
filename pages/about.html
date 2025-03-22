@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/about.css">
+    <link rel="stylesheet" href="../css/contact.css">
+    <link rel="stylesheet" href="../css/homepage.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+</head>
+<body>
+    <div class="wholenavbar">
+        <div class="sideimage cdsalogo">
+            <a href="homepage.html">
+                <img src="../assests/cdsalogo.png" alt="No image available" class="i1">
+            </a>
+        </div>
+        <div class = "navbar" id="navlinks">
+            <i class="fa fa-times fa" onclick="hidemenu()" id="close"></i>
+            <ul class="ul">
+                <li><a href="about.html" class="nav">About</a></li>
+                <li><a href="organisers.html" class="nav">Organisers</a></li>
+                <li><a href="3rdpage.html" class="nav">Speakers and Participants</a></li>
+                <li><a href="4thpage.html" class="nav">Venue</a></li>
+                <li><a href="accomodation.html" class="nav">Accomodation</a></li>
+                <li><a href="schedule.html" class="nav">Schedule</a></li>
+                <li><a href="poster.html" class="nav">Poster</a></li>
+                <li><a href="abstracts.html" class="nav">Abstracts</a></li>
+                <li><a href="gallery.html" class="nav">Gallery</a></li>
+                <li><a href="contact.html" class="nav">Contact</a></li>
+            </ul>
+        </div>
+        <i class="fa fa-bars" onclick="showmenu()" id="bars"></i>
+        <div class="sideimage daulogo">
+            <img src="../assests/DAU_logo.jpg" alt="No image available" class="i1 i2">
+        </div>
+    </div>
+    <section class="about">
+        <div class="contact-bg">
+            <h3>Discover insights into complex dynamical systems and their applications.</h3>
+            <h2>About the Conference</h2>
+            <div class="line">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+
+        <section class="about-highlights">
+            <div class="container">
+                <p>
+                    CDSA2026 explores advancements in nonlinear dynamics, complex systems, and predictability. 
+                    It provides an opportunity for young researchers to engage with leading experts and present their work. 
+                    The conference covers a wide range of applications across physical, chemical, biological, and engineering systems.
+                </p>
+                <div class="highlight-grid">
+                    <!-- Scientific Scope -->
+                    <div class="highlight-card">
+                        <i class="fas fa-microscope"></i>
+                        <h3>Scientific Scope</h3>
+                        <p>Explore challenges in physical, chemical, biological, and engineering systems.</p>
+                    </div>
+                    
+                    <!-- Expert Interaction -->
+                    <div class="highlight-card">
+                        <i class="fas fa-comments"></i>
+                        <h3>Expert Interaction</h3>
+                        <p>Gain insights from invited talks and network with top researchers.</p>
+                    </div>
+                    
+                    <!-- Contributory Talks -->
+                    <div class="highlight-card">
+                        <i class="fas fa-presentation"></i>
+                        <h3>Contributory Talks</h3>
+                        <p>Present contributory talks and posters on emerging topics.</p>
+                    </div>
+                    
+                    <!-- Networking Opportunities -->
+                    <div class="highlight-card">
+                        <i class="fas fa-network-wired"></i>
+                        <h3>Networking Opportunities</h3>
+                        <p>Connect with experts, researchers, and industry leaders to foster collaboration.</p>
+                    </div>
+                    
+                    <!-- Emerging Topics -->
+                    <div class="highlight-card">
+                        <i class="fas fa-chart-line"></i>
+                        <h3>Emerging Topics</h3>
+                        <p>Discover cutting-edge research on extreme events, tipping points, and predictability.</p>
+                    </div>
+                    
+                    <!-- Hands-on Workshops -->
+                    <div class="highlight-card">
+                        <i class="fas fa-laptop-code"></i>
+                        <h3>Hands-on Workshops</h3>
+                        <p>Participate in interactive workshops on tools and techniques in dynamical systems.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        
+        
+        
+    </section>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <script>
+        var navbar = document.getElementById("navlinks");
+        var bars = document.getElementById("bars");
+        var close1 = document.getElementById("close");
+        // close1.style.display = "none";
+        function hidemenu(){
+            if (window.innerWidth <= 1160) {
+            navbar.style.left = "-400px";
+            bars.style.display = "inline-block"; // Show the bars again
+            close1.style.display = "none"; // Hide the close icon
+        }
+        }
+        function showmenu(){
+            if (window.innerWidth <= 1160) {
+            navbar.style.left = "-100px";
+            bars.style.display = "none"; // Hide the bars
+            close1.style.display = "inline-block"; // Show the close icon
+        }
+        }
+        window.addEventListener("resize", function () {
+    if (window.innerWidth > 1160) {
+        
+        bars.style.display = "none"; // Hide bars on larger screens
+        close1.style.display = "none"; // Hide close icon
+    } else {
+        
+        bars.style.display = "inline-block"; // Show bars for smaller screens
+    }
+});
+        // Load footer dynamically
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading footer:', error));
+    </script>
+</body>
+</html>
