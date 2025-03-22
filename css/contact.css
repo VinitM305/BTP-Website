@@ -41,7 +41,7 @@ body{
 .line div:nth-child(3){
     height: 3px;
     width: 70px;
-    background: orange;
+    background: #f44336;
     border-radius: 5px;
 }
 .line{
@@ -51,7 +51,7 @@ body{
 .line div:nth-child(2){
     width: 10px;
     height: 10px;
-    background: orange;
+    background: #f44336;
     border-radius: 50%;
 }
 .text{

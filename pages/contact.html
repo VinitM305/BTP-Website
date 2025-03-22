@@ -23,7 +23,7 @@
             <i class="fa fa-times fa" onclick="hidemenu()" id="close"></i>
             <ul class="ul">
                 <li><a href="1stpage.html" class="nav">About</a></li>
-                <li><a href="2ndpage.html" class="nav">Organisers</a></li>
+                <li><a href="organisers.html" class="nav">Organisers</a></li>
                 <li><a href="3rdpage.html" class="nav">Speakers and Participants</a></li>
                 <li><a href="4thpage.html" class="nav">Venue</a></li>
                 <li><a href="accomodation.html" class="nav">Accomodation</a></li>
@@ -108,6 +108,35 @@
               document.getElementById('footer-placeholder').innerHTML = data;
           })
           .catch(error => console.error('Error loading footer:', error));
+
+        var navbar = document.getElementById("navlinks");
+        var bars = document.getElementById("bars");
+        var close1 = document.getElementById("close");
+        // close1.style.display = "none";
+        function hidemenu(){
+            if (window.innerWidth <= 1160) {
+            navbar.style.left = "-400px";
+            bars.style.display = "inline-block"; // Show the bars again
+            close1.style.display = "none"; // Hide the close icon
+        }
+        }
+        function showmenu(){
+            if (window.innerWidth <= 1160) {
+            navbar.style.left = "-100px";
+            bars.style.display = "none"; // Hide the bars
+            close1.style.display = "inline-block"; // Show the close icon
+        }
+        }
+        window.addEventListener("resize", function () {
+    if (window.innerWidth > 1160) {
+        
+        bars.style.display = "none"; // Hide bars on larger screens
+        close1.style.display = "none"; // Hide close icon
+    } else {
+        
+        bars.style.display = "inline-block"; // Show bars for smaller screens
+    }
+});
   </script>
   </body>
 </html>
