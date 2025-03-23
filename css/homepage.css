@@ -45,7 +45,8 @@ html, body {
 .navbar li a{
     text-decoration:none;
     color: black;
-    font-family: "Open Sans", Sans-serif;
+    /* font-family: "Open Sans", Sans-serif; */
+    font-family: Arial, sans-serif;
     text-transform: uppercase;
 }
 .navbar ul li::after{
@@ -223,6 +224,7 @@ html, body {
         color: white;
         margin-left: 20px;
         margin-top: 5px;
+        cursor: pointer;
     }
     #close{
         margin-top: 10px;
