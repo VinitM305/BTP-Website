@@ -9,6 +9,10 @@
     <title>BTP-Project</title>
 </head>
 <body>
+    <div id="preloader">
+        <span class="loader"><span class="loader-inner"></span></span>
+    </div>
+    <div id="content" style="display: none;">
     <section class="page">
         <div class="wholenavbar">
             <div class="sideimage cdsalogo">
@@ -64,7 +68,16 @@
             </main>
         </div>
     </section>
+</div>
     <script>
+        
+        window.onload = function () {
+            setTimeout(function () {
+                document.getElementById('preloader').style.display = 'none';
+                document.getElementById('content').style.display = 'block';
+            }, 3000);
+        };
+
         var navbar = document.getElementById("navlinks");
         var bars = document.getElementById("bars");
         var close1 = document.getElementById("close");

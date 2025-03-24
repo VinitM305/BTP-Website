@@ -3,11 +3,87 @@ body{
     padding: 0;
     box-sizing: border-box;
 }
-html, body {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+
+#preloader {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #242F3F;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+/* Square Loader */
+.loader {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    position: relative;
+    border: 4px solid #FFF;
+    animation: loader 2s infinite ease;
+}
+
+.loader-inner {
+    vertical-align: top;
+    display: inline-block;
+    width: 100%;
+    background-color: #fff;
+    animation: loader-inner 2s infinite ease-in;
+}
+
+/* Keyframes for loader rotation */
+@keyframes loader {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(180deg);
+    }
+
+    50% {
+        transform: rotate(180deg);
+    }
+
+    75% {
+        transform: rotate(360deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Keyframes for inner loader fill */
+@keyframes loader-inner {
+    0% {
+        height: 0%;
+    }
+
+    25% {
+        height: 0%;
+    }
+
+    50% {
+        height: 100%;
+    }
+
+    75% {
+        height: 100%;
+    }
+
+    100% {
+        height: 0%;
+    }
+}
+
+/* Hide content until preloader ends */
+#content {
+    display: none;
+}
+
 
 .page{
     background: linear-gradient(rgba(0, 0, 0, 0.557),rgba(0, 0, 0, 0.7) ),url('../assests/front.jpg') ;
@@ -417,4 +493,6 @@ input:nth-of-type(5) {
 input:nth-of-type(5):checked ~ main#carousel {
     --position: 5;
 }
+
+  
 

@@ -10,6 +10,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
 </head>
 <body>
+    <div id="preloader">
+        <span class="loader"><span class="loader-inner"></span></span>
+    </div>
+    <div id="content" style="display: none;">
     <div class="wholenavbar">
         <div class="sideimage cdsalogo">
             <a href="homepage.html">
@@ -121,10 +125,19 @@
         </div>
     </section>
 
+    </div>
+
     <!-- Footer Placeholder -->
     <div id="footer-placeholder"></div>
 
     <script>
+
+window.onload = function () {
+            setTimeout(function () {
+                document.getElementById('preloader').style.display = 'none';
+                document.getElementById('content').style.display = 'block';
+            }, 2000);
+        };
         var navbar = document.getElementById("navlinks");
         var bars = document.getElementById("bars");
         var close1 = document.getElementById("close");
