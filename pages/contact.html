@@ -28,7 +28,7 @@
             <ul class="ul">
                 <li><a href="about.html" class="nav">About</a></li>
                 <li><a href="organisers.html" class="nav">Organisers</a></li>
-                <li><a href="3rdpage.html" class="nav">Speakers and Participants</a></li>
+                <li><a href="speakers.html" class="nav">Speakers and Participants</a></li>
                 <li><a href="venue.html" class="nav">Venue</a></li>
                 <li><a href="accomodation.html" class="nav">Accomodation</a></li>
                 <li><a href="schedule.html" class="nav">Schedule</a></li>
@@ -61,16 +61,18 @@
       <div class = "contact-body">
         <div class = "contact-info">
           <div>
+            <a href="tel:+918372996002" style="text-decoration: none; color: inherit; cursor:pointer;">
             <span><i class = "fas fa-mobile-alt"></i></span>
             <span>Phone No.</span>
-            <span class = "text">+91 8372996002</span>
+            <span class = "text">+91 8372996002</span></a>
           </div>
           <div>
+            <a href="mailto:prosenjit_kundu@daiict.ac.in" target="_blank" class="contact__button" style="text-decoration: none; color: inherit; cursor:pointer;">
             <span><i class = "fas fa-envelope-open"></i></span>
             <span>E-mail</span>
-            <span class = "text">prosenjit_kundu@daiict.ac.in</span>
+            <span class = "text">prosenjit_kundu@daiict.ac.in</span></a>
           </div>
-          <div>
+          <div style="cursor: pointer;">
             <span><i class = "fas fa-map-marker-alt"></i></span>
             <span>Address</span>
             <span class = "text">DAIICT-campus, near, Reliance Cross Rd, Gandhinagar, Gujarat 382007</span>
@@ -108,12 +110,7 @@
 
     <div id="footer-placeholder"></div>
     <script>
-      window.onload = function () {
-            setTimeout(function () {
-                document.getElementById('preloader').style.display = 'none';
-                document.getElementById('content').style.display = 'block';
-            }, 1000);
-        };
+      
       // Load footer dynamically
       fetch('footer.html')
           .then(response => response.text())
@@ -125,6 +122,37 @@
         var navbar = document.getElementById("navlinks");
         var bars = document.getElementById("bars");
         var close1 = document.getElementById("close");
+        const navLinks = document.querySelectorAll(".nav");
+
+        function removeActiveClass() {
+    navLinks.forEach(link => {
+        link.classList.remove("active");
+        link.removeAttribute("onclick"); // Remove onclick from all links
+        link.style.pointerEvents = "auto"; // Enable clicking again for other links
+    });
+}
+
+// Highlight the active link based on current URL
+function highlightActiveLink() {
+    const currentPage = window.location.pathname.split("/").pop();
+
+    // Remove active class and reset onclick for all links before adding it to the current one
+    removeActiveClass();
+
+    navLinks.forEach(link => {
+        if (link.getAttribute("href") === currentPage) {
+            link.classList.add("active");
+            link.style.pointerEvents = "none"; // Make active link unclickable
+        }
+    });
+}
+        window.onload = function () {
+            setTimeout(function () {
+                document.getElementById('preloader').style.display = 'none';
+                document.getElementById('content').style.display = 'block';
+                highlightActiveLink();
+            }, 1000);
+        };
         // close1.style.display = "none";
         function hidemenu(){
             if (window.innerWidth <= 1160) {

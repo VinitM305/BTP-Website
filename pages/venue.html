@@ -14,7 +14,7 @@
         <span class="loader"><span class="loader-inner"></span></span>
     </div>
     <div id="content" style="display: none;">
-    <div class="wholenavbar">
+        <div class="wholenavbar">
         <div class="sideimage cdsalogo">
             <a href="homepage.html">
                 <img src="../assests/cdsalogo.png" alt="No image available" class="i1">
@@ -25,8 +25,8 @@
             <ul class="ul">
                 <li><a href="about.html" class="nav">About</a></li>
                 <li><a href="organisers.html" class="nav">Organisers</a></li>
-                <li><a href="3rdpage.html" class="nav">Speakers and Participants</a></li>
-                <li><a href="evnue.html" class="nav">Venue</a></li>
+                <li><a href="speakers.html" class="nav">Speakers and Participants</a></li>
+                <li><a href="venue.html" class="nav">Venue</a></li>
                 <li><a href="accomodation.html" class="nav">Accomodation</a></li>
                 <li><a href="schedule.html" class="nav">Schedule</a></li>
                 <li><a href="poster.html" class="nav">Poster</a></li>
@@ -41,8 +41,8 @@
                 <img src="../assests/DAU_logo.jpg" alt="No image available" class="i1 i2">
             </a>
         </div>
-    </div>
-    <section class="venue">
+        </div>
+        <section class="venue">
         <div class = "contact-bg">
             <h3>Join us at Dhirubhai Ambani University for an inspiring experience.</h3>
             <h2>Venue of the Conference</h2>
@@ -59,13 +59,13 @@
         
                 <div class="image-grid">
                     <div class="image-card">
-                        <img src="../assests/daphoto.jpeg" alt="Digha Science Centre" style="border-radius: 10px;">
+                        <img src="../assests/daphoto3.jpeg" alt="Digha Science Centre" style="border-radius: 10px;">
                     </div>
                     <div class="image-card">
-                        <img src="../assests/daphoto.jpeg" alt="Conference Room" style="border-radius: 10px;">
+                        <img src="../assests/daphoto2.jpeg" alt="Conference Room" style="border-radius: 10px;">
                     </div>
                     <div class="image-card">
-                        <img src="../assests/daphoto.jpeg" alt="Digha Beach" style="border-radius: 10px;">
+                        <img src="../assests/daphoto1.jpeg" alt="Digha Beach" style="border-radius: 10px;">
                     </div>
                 </div>
         
@@ -81,27 +81,52 @@
                         <div class="contact-details">
                             <p><strong>DAIICT-campus, near, Reliance Cross Rd, <br>Gandhinagar - 382007 <br>Gujarat, India</strong></p>
                             
-                            <p><i class="fas fa-phone-alt"></i><a href="">(03220) 266360</a> </p>
-                            <p><i class="fas fa-envelope"></i> <a href="mailto:dscdigha@gmail.com">daiict@gmail.com</a></p>
-                            <p><i class="fas fa-globe"></i> <a href="https://dighasciencecentre.org" target="_blank">www.daiict.ac.in</a></p>
+                            <p><i class="fas fa-phone-alt"></i><a href="tel:03220266360">(03220) 266360</a> </p>
+                            <p><i class="fas fa-envelope"></i> <a href="mailto:info@daiict.ac.in" target="_blank" class="contact__button">info@daiict.ac.in</a></p>
+                            <p><i class="fas fa-globe"></i> <a href="https://www.daiict.ac.in/" target="_blank">www.daiict.ac.in</a></p>
                         </div>
                     </div>
                 </section>
             </div>
         </section>
-    </section>
+        </section>
     </div>
     <div id="footer-placeholder"></div>
     <script>
+        var navbar = document.getElementById("navlinks");
+        var bars = document.getElementById("bars");
+        var close1 = document.getElementById("close");
+        const navLinks = document.querySelectorAll(".nav");
+
+        function removeActiveClass() {
+    navLinks.forEach(link => {
+        link.classList.remove("active");
+        link.removeAttribute("onclick"); // Remove onclick from all links
+        link.style.pointerEvents = "auto"; // Enable clicking again for other links
+    });
+}
+
+// Highlight the active link based on current URL
+function highlightActiveLink() {
+    const currentPage = window.location.pathname.split("/").pop();
+
+    // Remove active class and reset onclick for all links before adding it to the current one
+    removeActiveClass();
+
+    navLinks.forEach(link => {
+        if (link.getAttribute("href") === currentPage) {
+            link.classList.add("active");
+            link.style.pointerEvents = "none"; // Make active link unclickable
+        }
+    });
+}
         window.onload = function () {
             setTimeout(function () {
                 document.getElementById('preloader').style.display = 'none';
                 document.getElementById('content').style.display = 'block';
+                highlightActiveLink();
             }, 1000);
         };
-        var navbar = document.getElementById("navlinks");
-        var bars = document.getElementById("bars");
-        var close1 = document.getElementById("close");
         // close1.style.display = "none";
         function hidemenu(){
             if (window.innerWidth <= 1160) {

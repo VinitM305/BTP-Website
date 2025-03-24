@@ -5,8 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/gallery.css">
     <link rel="stylesheet" href="../css/homepage.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
 </head>
 <body>
+    <div id="preloader">
+        <span class="loader"><span class="loader-inner"></span></span>
+    </div>
+    <div id="content" style="display: none;">
     <div class="wholenavbar">
         <div class="sideimage cdsalogo">
             <a href="homepage.html">
@@ -18,7 +23,7 @@
             <ul class="ul">
                 <li><a href="about.html" class="nav">About</a></li>
                 <li><a href="organisers.html" class="nav">Organisers</a></li>
-                <li><a href="3rdpage.html" class="nav">Speakers and Participants</a></li>
+                <li><a href="speakers.html" class="nav">Speakers and Participants</a></li>
                 <li><a href="venue.html" class="nav">Venue</a></li>
                 <li><a href="accomodation.html" class="nav">Accomodation</a></li>
                 <li><a href="schedule.html" class="nav">Schedule</a></li>
@@ -38,5 +43,67 @@
     <div class="container">
         <h1>Yet to be uploaded..</h1>
     </div>
+    </div>
+    <script>
+        var navbar = document.getElementById("navlinks");
+        var bars = document.getElementById("bars");
+        var close1 = document.getElementById("close");
+        const navLinks = document.querySelectorAll(".nav");
+
+        function removeActiveClass() {
+    navLinks.forEach(link => {
+        link.classList.remove("active");
+        link.removeAttribute("onclick"); // Remove onclick from all links
+        link.style.pointerEvents = "auto"; // Enable clicking again for other links
+    });
+}
+
+// Highlight the active link based on current URL
+function highlightActiveLink() {
+    const currentPage = window.location.pathname.split("/").pop();
+
+    // Remove active class and reset onclick for all links before adding it to the current one
+    removeActiveClass();
+
+    navLinks.forEach(link => {
+        if (link.getAttribute("href") === currentPage) {
+            link.classList.add("active");
+            link.style.pointerEvents = "none"; // Make active link unclickable
+        }
+    });
+}
+        window.onload = function () {
+            setTimeout(function () {
+                document.getElementById('preloader').style.display = 'none';
+                document.getElementById('content').style.display = 'block';
+                highlightActiveLink();
+            }, 2000);
+        };
+        // close1.style.display = "none";
+        function hidemenu(){
+            if (window.innerWidth <= 1160) {
+            navbar.style.left = "-400px";
+            bars.style.display = "inline-block"; // Show the bars again
+            close1.style.display = "none"; // Hide the close icon
+        }
+        }
+        function showmenu(){
+            if (window.innerWidth <= 1160) {
+            navbar.style.left = "-100px";
+            bars.style.display = "none"; // Hide the bars
+            close1.style.display = "inline-block"; // Show the close icon
+        }
+        }
+        window.addEventListener("resize", function () {
+    if (window.innerWidth > 1160) {
+        
+        bars.style.display = "none"; // Hide bars on larger screens
+        close1.style.display = "none"; // Hide close icon
+    } else {
+        
+        bars.style.display = "inline-block"; // Show bars for smaller screens
+    }
+});
+    </script>
 </body>
 </html>

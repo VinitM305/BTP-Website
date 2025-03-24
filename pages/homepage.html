@@ -25,7 +25,7 @@
                 <ul class="ul">
                     <li><a href="about.html" class="nav">About</a></li>
                     <li><a href="organisers.html" class="nav">Organisers</a></li>
-                    <li><a href="organisers.html" class="nav">Speakers and Participants</a></li>
+                    <li><a href="speakers.html" class="nav">Speakers and Participants</a></li>
                     <li><a href="venue.html" class="nav">Venue</a></li>
                     <li><a href="accomodation.html" class="nav">Accomodation</a></li>
                     <li><a href="schedule.html" class="nav">Schedule</a></li>
@@ -71,16 +71,44 @@
 </div>
     <script>
         
-        window.onload = function () {
-            setTimeout(function () {
-                document.getElementById('preloader').style.display = 'none';
-                document.getElementById('content').style.display = 'block';
-            }, 3000);
-        };
+        
 
         var navbar = document.getElementById("navlinks");
         var bars = document.getElementById("bars");
         var close1 = document.getElementById("close");
+        const navLinks = document.querySelectorAll(".nav");
+
+// Function to remove active class from all links
+function removeActiveClass() {
+    navLinks.forEach(link => {
+        link.classList.remove("active");
+        link.removeAttribute("onclick"); // Remove onclick from all links
+        link.style.pointerEvents = "auto"; // Enable clicking again for other links
+    });
+}
+
+// Highlight the active link based on current URL
+function highlightActiveLink() {
+    const currentPage = window.location.pathname.split("/").pop();
+
+    // Remove active class and reset onclick for all links before adding it to the current one
+    removeActiveClass();
+
+    navLinks.forEach(link => {
+        if (link.getAttribute("href") === currentPage) {
+            link.classList.add("active");
+            link.style.pointerEvents = "none"; // Make active link unclickable
+        }
+    });
+}
+        window.onload = function () {
+            setTimeout(function () {
+                document.getElementById('preloader').style.display = 'none';
+                document.getElementById('content').style.display = 'block';
+                highlightActiveLink();
+            }, 3000);
+        };
+
         // close1.style.display = "none";
         function hidemenu(){
             if (window.innerWidth <= 1160) {
