@@ -166,3 +166,17 @@ html, body {
     }
 }
 
+@media screen and (max-width:600px)
+{
+    .contact-bg{
+        height: 50vh;
+    }
+}
+
+@media screen and (max-width:400px)
+{
+    .contact-bg{
+        height: 52vh;
+    }
+}
+

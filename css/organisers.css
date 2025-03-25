@@ -130,3 +130,10 @@ ul {
         width: 60%;
     }
 }
+
+@media screen and (max-width:445px)
+{
+    .contact-bg{
+        height: 50vh;
+    }
+}
