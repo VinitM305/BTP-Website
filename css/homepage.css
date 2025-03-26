@@ -107,6 +107,8 @@ body{
     font-size: 13px;
     font-weight:550;
     padding: 0;
+    margin-block-start: 0;
+    margin-block-end: 0;
 }
 .navbar li{
     color: white;
@@ -246,13 +248,16 @@ body{
         width: 75vw;
     }
     .page{
-        background-position: center 130px;
+        background-position: center 105px;
     }
     .daulogo{
         margin-top: 25px;
     }
     .cdsalogo{
         margin-top: 20px;
+    }
+    .i1{
+        margin-top: 0;
     }
 }
 
@@ -318,6 +323,9 @@ body{
     }
     .wholenavbar{
         position: fixed;
+    }
+    .i1{
+        margin-top: 10px;
     }
 }
 .intro{

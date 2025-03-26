@@ -52,7 +52,7 @@ h1 {
 
 .speaker-list {
     flex: 1;
-    min-width: 300px;
+    /* min-width: 300px; */
     max-width: 500px;
     background-color: #ffffff;
     border-radius: 0.5rem;
