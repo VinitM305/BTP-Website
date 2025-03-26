@@ -75,13 +75,21 @@ ul {
     padding: 0;
 }
 
+.person img{
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.person img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
 .list {
     margin-bottom: 10px;
     font-size: 14px;
     position: relative;
     padding-left: 25px;
 }
-
 
 .list::before {
     color: #fcbf49;
