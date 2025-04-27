@@ -27,7 +27,14 @@ body {
     color: #f8a500;
 }
 
-
+@media screen and (max-width:1160px)
+{
+    .navbar ul li{
+        display: inline-block;
+        margin: 0;
+        margin-left: 0;
+    }
+}
 
 
 

@@ -72,3 +72,12 @@ html, body {
         height: 50vh;
     }
 }
+
+@media screen and (max-width:1160px)
+{
+    .navbar ul li{
+        display: inline-block;
+        margin-top: 0;
+        margin-left: 0;
+    }
+}

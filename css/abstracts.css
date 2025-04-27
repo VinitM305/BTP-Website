@@ -18,3 +18,12 @@ h1 {
     font-family: Arial, sans-serif;
     color: #333;
 }
+
+@media screen and (max-width:1160px)
+{
+    .navbar ul li{
+        display: inline-block;
+        margin: 0;
+        margin-left: 0;
+    }
+}

@@ -89,8 +89,6 @@ body{
     font-weight: bold;
     text-decoration: none;
 }
-
-
 .page{
     background: linear-gradient(rgba(0, 0, 0, 0.52),rgba(0, 0, 0, 0.64) ),url('../assests/homepage.jpg') ;
     background-size: cover;
@@ -136,7 +134,7 @@ body{
 .navbar ul li::after{
     content: "";
     width: 0%;
-    height: 2px;
+    /* height: 10px; */
     background: #f44336;
     display: block;
     margin: auto;
@@ -149,10 +147,7 @@ body{
 
 .content{
     width: 70%;
-    height: 400px;
     display:flex;
-    margin: auto;
-    padding: 50px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -273,7 +268,7 @@ body{
         background-position: center 75px;
     }
     .navbar ul{
-        margin-top: 20px;
+        /* margin-top: 20px; */
         margin-bottom: 20px;
         display: flex;
         flex-direction: column;  
@@ -282,7 +277,7 @@ body{
     }
     .navbar ul li{
         display: inline-block;
-        margin: 5px;
+       
         margin-left: 0;
     }
     .navbar{
@@ -382,6 +377,9 @@ body{
         max-width: 500px;      
         margin: 0 auto;         
     }
+    .page{
+        height: 115vh;
+    }
 }
 
 @media screen and (max-width: 530px) {
@@ -392,6 +390,15 @@ body{
         max-width: 400px;      
         margin: 0 auto;   /* Smaller minimum height */
     }
+    .page{
+        height: 125vh;
+    }
+    .heading{
+        font-size: 1.5rem;
+    }
+    .CDSA{
+        font-size: 2rem;
+    }
 }
 
 @media screen and (max-width: 460px) {
@@ -401,6 +408,37 @@ body{
         max-height: 320px;      
         max-width: 350px;      
         margin: 0 auto;   /* Smaller minimum height */
+    }
+    .page{
+        height: 138vh;
+    }
+    .heading{
+        font-size: 1.5rem;
+    }
+    .CDSA{
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 380px)
+{
+    .item{
+        width: 50%;
+        height: auto;           /* Height adjusts automatically */
+        max-height: 300px;      
+        max-width: 320px;      
+        margin: 0 auto; 
+    }
+}
+
+@media screen and (max-width: 340px)
+{
+    .item{
+        width: 50%;
+        height: auto;           /* Height adjusts automatically */
+        max-height: 300px;      
+        max-width: 300px;      
+        margin: 0 auto; 
     }
 }
 
